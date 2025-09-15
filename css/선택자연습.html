@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자연습</title>
+  <style> 
+  /* section{background-color:#86c;} */
+    /* html문서내에 모든 section 태그를 선택하여 배경색을 #86c로 지정  */
+    
+    /* html 문서내에 모든#section1을 선택하여 배경색을 #86c로 지정 */
+    #section1{background-color:#86c;}
+
+    /* secton p > 조상 . 후손 공백문자는 후손 선택자
+      태크 섹션의 후손 모든 p */
+    /* section p{background-color: #ccc;} */
+
+    section > p {background-color: #ccc}
+     /* section > p.  -> 부모 > 자식 */
+    /* section > .box>p{color: #f00;} */
+     /* section > .box>p =12 
+     /* section > div.box>p = 13 */
+      /* 모든 section 태그의 직계 자식 모든 .box 태그의 자식 모든 p  */
+      /* section h2 ~ p{color: #f00;} */
+      /* 요소 1~ 요소2 : 요소1 아래 동생인 모든 요소들 */
+
+      section h2 + p {color:#f00 ;}
+
+  </style>
+</head>
+<body>
+  <!-- #wrap>header+.container+footer -->
+  <div id="wrap">
+    <header>해더</header>
+    <div class="container">
+      <!-- section#section$3 -->
+      <section id="section1">
+        <!-- p+.box>h1+p*2 -->
+        <p>섹션슬로건1</p>
+        <div class="box">
+          <h2>섹션타이틀</h2>
+          <p>이벤트 설명1</p>
+          <p>이벤트 설명2</p>
+        </div>
+      </section>
+
+      <section id="section2">  <p>섹션슬로건1</p>
+        <div class="box">
+          <h2>섹션타이틀</h2>
+          <p>이벤트 설명1</p>
+          <p>이벤트 설명2</p>
+        </div></section>
+
+      <section id="section3">  <p>섹션슬로건1</p>
+        <div class="box">
+          <h2>섹션타이틀</h2>
+          <p>이벤트 설명1</p>
+          <p>이벤트 설명2</p>
+        </div></section>
+
+    </div>
+    <!-- //.container -->
+    <footer>푸터</footer>
+  </div>
+
+</body>
+</html>   
+    
+
+   
+
