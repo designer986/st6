@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인라인 레벨과 블록레벨</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        background-color: #ccc;
+      }
+      .inner {
+        width: 80%;
+        margin: 0 auto;
+        /* background-color: #ef6;  */
+      }
+      .box {
+        margin: 0px auto;
+        padding: 50px 0;
+        background-color: #868;
+      }
+      .box {
+        margin-bottom: 50px;
+        background-color: #fdf;
+      }
+      .box:last-child {
+        margin-bottom: 0px;
+      }
+      .box span {
+        color: #f00;
+        font-weight: bold;
+        font-size: large;
+        background-color: #ef8;
+        padding: 16px;
+        margin: 8px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- .container>.box.box$*2>lorem -->
+    <div class="container">
+      <div class="inner">
+        <div class="box box1">
+          Lorem <span>ipsum </span>dolor sit amet consectetur adipisicing
+          <span>elit.</span> Praesentium sed iste voluptates reprehenderit at
+          minima ullam cum inventore provident sunt architecto officiis tempora
+          delectus quisquam sint, pariatur, maiores aliquam facilis!
+        </div>
+        <div class="box box2">
+          Animi voluptates beatae eveniet nobis ex dolor distinctio nostrum nisi
+          omnis, tempora odio voluptate ut neque, cumque soluta iure tenetur
+          iusto! Eveniet, neque illum quas minima ipsum assumenda commodi
+          maiores!
+        </div>
+        <div class="box box3">
+          Animi voluptates beatae eveniet nobis ex dolor distinctio nostrum nisi
+          omnis, tempora odio voluptate ut neque, cumque soluta iure tenetur
+          iusto! Eveniet, neque illum quas minima ipsum assumenda commodi
+          maiores!
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
