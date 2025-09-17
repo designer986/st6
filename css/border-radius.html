@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>border-radius</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        width: 100px;
+        height: auto;
+        min-height: 100px;
+        /* min hight는 hight가 유동적일때만 사용!  */
+        margin: 20px;
+        background-color: #ccc;
+      }
+      .box1 {
+        border-radius: 10px;
+      }
+      .box2 {
+        border-radius: 10px 20px 30px 40px;
+      }
+      .box3 {
+        border-radius: 50% 0;
+      }
+      .box4 {
+        border-radius: 50%;
+      }
+      .box5 {
+        border-radius: 0 0 50% 50%;
+      }
+      .box6 {
+        width: 200px;
+        height: 100px;
+        border-radius: 50px;
+      }
+      section{ margin-top: 50px;
+
+      }
+      .keyword-wrap{text-align: center; /*1*/
+      margin: 50px;} /*3*/
+      div.keyword1{margin-bottom: 10px;} /*3*/
+      div.keyword2{}
+      div.keyword-item{
+        display: inline-block;
+        padding:0 1rem; 
+        line-height:40px ;
+        border: 1px solid #e59898;
+        border-radius: 21px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <!-- .keyword1>.keyword-item*5>{keyword00$} -->
+      <div class="keyword1 keyword-wrap">
+        <div class="keyword-item">keyword001</div>
+        <div class="keyword-item">key2</div>
+        <div class="keyword-item">keyword3</div>
+        <div class="keyword-item">keyword004</div>
+        <div class="keyword-item">keyword005</div>
+      </div>
+      <!-- .keyword1>.keyword-item*5>{keyword00$} -->
+      <div class="keyword2 keyword-wrap">
+        <div class="keyword-item">keyword001</div>
+        <div class="keyword-item">key2</div>
+        <div class="keyword-item">keyword003</div>
+        <div class="keyword-item">keyword004</div>
+        <div class="keyword-item">keyword005</div>
+      </div>
+    </section>
+
+    <hr>
+    <!-- .box.box$*6 -->
+    <div class="box box1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ipsa
+      similique tenetur asperiores omnis, consectetur dolore magni quis velit
+      debitis rerum quidem repudiandae odit officiis porro reiciendis odio vero
+      deleniti.
+    </div>
+    <div class="box box2">123</div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+    <div class="box box5"></div>
+    <div class="box box6"></div>
+  
+
+  </body>
+</html>

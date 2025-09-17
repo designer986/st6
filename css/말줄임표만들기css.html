@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>말줄임표만들기css</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        margin: 50px;
+        padding: 1rem;
+        /* 자신의 font size 기준 */
+        background-color: #ccc;
+      }
+      /* 여러줄 말줄임 */
+      .box1 {
+        /* white-space: normal; */
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+        width: 80%;
+        height: 70px;
+      }
+      /* 한줄 말줄임표 */
+      .box2 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      /* overflow */
+      /* 박스모델 => 너비 : 부모의 컨텐츠 영역
+                 높이 : 자식[컨텐츠]의 높이 */
+      .box3,
+      .box4,
+      .box5{
+        width: 400px;
+        height: 40px;
+      }
+      .box3{overflow: visible;}
+      .box4{overflow: hidden;}
+      .box5{overflow: auto;}
+
+    </style>
+  </head>
+  <body>
+    <!-- div.box.box$*2>lorem -->
+    <div class="box box1">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum, excepturi
+      laborum. Fugit accusamus, delectus sunt laborum iure nihil impedit tempora
+      ut fuga, ratione adipisci? Debitis inventore adipisci officiis a neque?
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum, excepturi
+      laborum. Fugit accusamus, delectus sunt laborum iure nihil impedit tempora
+      ut fuga, ratione adipisci? Debitis inventore adipisci officiis a neque?
+    </div>
+    <div class="box box2">
+      Facilis commodi ducimus optio? Nisi odit dolorum optio repellendus illo
+      facilis eius, autem eos vero obcaecati beatae magni ut facere distinctio,
+      deleniti quisquam soluta non? Deserunt culpa dolorum consequatur porro?
+    </div>
+    <hr />
+    <!-- .box.box$@3*3>lorem -->
+    <div class="box box3">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempora
+      tenetur, voluptatum quo sed eveniet libero, modi nulla sunt, ab voluptatem
+      numquam natus! Eos non numquam, nesciunt consectetur quam consequatur.
+    </div>
+    <div class="box box4">
+      Magnam, quam sunt minus nesciunt minima voluptatibus ea fuga ut provident
+      alias accusantium, quae praesentium inventore at voluptate? Modi impedit
+      fugiat cum repellat sapiente corrupti similique unde sequi ullam iusto!
+    </div>
+    <div class="box box5">
+      Voluptates quas error, numquam nostrum illo placeat, unde eius nemo
+      repellendus totam vitae aperiam, impedit mollitia animi quod. Suscipit,
+      reiciendis ex neque iusto odit aspernatur non aut dicta rerum voluptatem!
+      reiciendis ex neque iusto odit aspernatur non aut dicta rerum voluptatem!
+      reiciendis ex neque iusto odit aspernatur non aut dicta rerum voluptatem!
+    </div>
+  </body>
+</html>
