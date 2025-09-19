@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        position: relative;
+        margin: 100px;
+        background-color: #ccc;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+      .box:nth-child(odd) {
+        background: #ef6;
+      }
+      .box:nth-child(even) {
+        background: #f6e;
+      }
+      .box1 {
+        /*위치를지정하는 left.rihgt.bottom속성값을 인식x */
+        position: static;
+        left: 100px;
+        top: 100px;
+      }
+      .box2 {
+        /*position:relative = 기준:본인 일반흐름 0*/
+        position: relative;
+        left: 50px;
+        top: 50px;
+      }
+      .box3,
+      .box4,
+      .box5 {
+        /*.container{position:relative;}요소 3,4,5,기준요소 */
+        position: absolute;
+      }
+      /* position : absolute; -> 기준: 가까운 조상중에 position: static을 제외한 
+      position 선언된 요소 
+       일반흐름 x 
+    레이어 개념 추가 : 뒤에 작성된 요소 상위 레이어 
+    내가 원하는 곳에 정확한 위치를 잡아주기 위해서 사용! */
+      .box3 {
+        /*.container {position:relative;}기준요소*/
+        right: 0;
+        top: 0;
+      }
+      .box4 {
+        /*.container {position:relative;}기준요소*/
+        right: 50px;
+        bottom: -50px;
+      }
+      .box5 {
+        /*.container {position:relative;}기준요소*/
+        left: 120px;
+        top: 40px;
+      }
+      .box6 {
+        /*기준:브라우저 일반흐름 x */
+        position: fixed;
+        right: 50px;
+        bottom: 50px;
+      }
+      body {
+        height: 3000px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- .container>.box.box$*6>.child>{box$} -->
+    <div class="container">
+      <div class="box box1">
+        <div class="child">box1</div>
+      </div>
+      <div class="box box2">
+        <div class="child">box2</div>
+      </div>
+      <div class="box box3">
+        <div class="child">box3</div>
+      </div>
+      <div class="box box4">
+        <div class="child">box4</div>
+      </div>
+      <div class="box box5">
+        <div class="child">box5</div>
+      </div>
+      <div class="box box6">
+        <div class="child">box6</div>
+      </div>
+    </div>
+  </body>
+</html>
