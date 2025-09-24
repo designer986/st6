@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>object-fit</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin: 50px;
+      }
+      .img-wrap {
+        background-color: #ccc;
+        border: 1px solid #000;
+        padding: 1em; /*.img.wrap에 지정된 font size에 맞춰서*/
+        width: 300px;
+        height: 300px;
+      }
+      /* 이미지 또는 동영상 크기를 해당 요소에 표시하는 방법을 선택하는것 = object fit */
+      .img-wrap img {
+        width: 100%;
+        height: 100%;
+        /* object-fit: fill; -> 기본 값 / 이미지의 기존 비율 무시하고 채움*/
+        /* object-fit: contain; -> 이미지의 기존 비율을 유지한 채 다 보여지도록 / 이미지 영역에 안채워져도 기존 비율 유지 */
+        /* object-fit: cover; -> 이미지의 기존 비율 유지한 채 이미지가 가장 덜 잘리게 한채로 이미지 영역에 채움 */
+        object-fit: cover;
+        border: 1px solid #f00;
+        /* object-position: left top; */
+        /* object-position: center; */
+        /* object-position: right center; */
+        object-position: 100% 50%;
+
+
+      }
+    </style>
+  </head>
+  <body>
+    <!-- .img-wrap>img -->
+    <div class="img-wrap">
+      <img
+        src="https://images.pexels.com/photos/974911/pexels-photo-974911.jpeg"
+        alt=""
+      />
+    </div>
+    <div class="img-wrap">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/17234/17234596.png"
+        alt=""
+      />
+    </div>
+  </body>
+</html>
