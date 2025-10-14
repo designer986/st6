@@ -4,3 +4,7 @@
 참고문서/
 연습/
 *.zip
+cafe24/
+*.log
+.vscode/
+.history/
