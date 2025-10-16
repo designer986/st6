@@ -16,7 +16,9 @@
 <style>
   *{margin: 0; padding: 0;}
   body{margin-top:50px;}
-  .myname{width: 60%;}
+  .myname{
+    width:60%;
+  }
   .swiper-slide img{
     width: 100%;
     /* height: calc(100vh - 70px); */
@@ -56,14 +58,17 @@
   const swiper = new Swiper('.myname', {
   // Optional parameters
   direction: 'horizontal',
-  loop: true, /*끝나도 이미지 계속 반복해서 롤링되라!*/
-autoplay:{delay:2500, DeviceOrientationEvent:false}
+  loop: true,
+  autoplay: {
+  delay: 2500,
+  disableOnInteraction: false,
+},
+
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
-    // type:'fraction'
-    // type:'progressbar'
-  
+    // type : 'fraction',
+    // type : 'progressbar',
   },
 
   // Navigation arrows
