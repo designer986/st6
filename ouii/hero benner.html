@@ -87,11 +87,9 @@ rel="stylesheet">
 
 <!-- ub-swiper-controls-bottom -->
 <div id="container" data-ez="layout-187eug1-1">
-      <div id="contents">
       <div id="contents" class="ub-style">
 
 <!-- 여기에 콘텐츠 -->
-        <section class="section visual-section">
         <section class="section visual-section section_full">
 <div class="swiper visual_swiper ub-swiper ub-swiper-controls-bottom">
 <div class="swiper-wrapper">
@@ -138,7 +136,7 @@ rel="stylesheet">
 </section>
 
 </div>
-</div>
+
 <!--@import(/layout/basic/footer.html)-->
 <!--#ez="1/1"-->
 </div><!-- //wrap -->
@@ -185,6 +183,9 @@ loading="lazy"></div>
 const visual_swiper = new Swiper('.visual_swiper', {
 direction: 'horizontal',
 loop: true,
+centeredSlides: true,
+slidesPerVie:'auto',
+// spaceBetween:30,
 // autoplay: {
 //   delay: 2500,
 //   disableOnInteraction: false,
