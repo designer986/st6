@@ -3,7 +3,7 @@
 ======================================== */
 :root {
   /*색상 */
-   --primary-color: #1f1f1f;
+  --primary-color: #1f1f1f;
   /* 간격 변수 */
   --space-xs: 8px;
   --space-sm: 10px;
@@ -11,17 +11,20 @@
   --space-lg: 30px;
   --space-xl: 40px;
   --space-xxl: 120px;
-  
+
   /* 레이아웃 변수 */
   --max-width: 1230px;
   --section-width: 92%;
-  --dan-space:var(--space-md);
-  
+  --dan-space: var(--space-md);
+
   /* 반응형 breakpoint */
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 767px;
   --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
+  --breakpoint-xl: 1300px;
 }
 
-
+/* section 변수선언 */
+--section-bg: #fea;
+--section-padding-top-bottom: 40px;
+--section-main-banner-padding: 16px;
