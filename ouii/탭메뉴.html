@@ -101,7 +101,7 @@
 
           <!-- 여기에 테스트 콘텐츠 복사 -->
           <section
-            class="section main_product_category tab-horizontal"
+            class="section main_product_category tab-vertical"
             data-ez-module="product-list-category/2"
             data-ez-layout="grid4"
             data-ez="contents-17fn798-1"
@@ -159,7 +159,7 @@
                 <li data-ez-role="tab-item">
                   <button
                     type="button"
-                    class="button active"
+                    class="button"
                     data-id="tabContent4"
                     data-ez-role="name"
                     data-name="새로운 카테고리"
@@ -178,9 +178,7 @@
                 id="tabContent1"
                 data-ez-role="content-item"
               >
-                <div data-ez-holder="product_listmain">
-                  탭콘텐츠1
-                </div>
+                <div data-ez-holder="product_listmain">탭콘텐츠1</div>
               </div>
 
               <div
@@ -188,19 +186,15 @@
                 id="tabContent2"
                 data-ez-role="content-item"
               >
-                <div data-ez-holder="product_listmain">
-                  탭콘텐츠2
-                </div>
+                <div data-ez-holder="product_listmain">탭콘텐츠2</div>
               </div>
 
               <div
-                class="tabcontent "
+                class="tabcontent"
                 id="tabContent3"
                 data-ez-role="content-item"
               >
-                <div data-ez-holder="product_listmain">
-                  텝콘텐츠3
-                </div>
+                <div data-ez-holder="product_listmain">텝콘텐츠3</div>
               </div>
 
               <div
@@ -208,9 +202,7 @@
                 id="tabContent4"
                 data-ez-role="content-item"
               >
-                <div data-ez-holder="product_listmain">
-                  탭콘텐츠4
-                </div>
+                <div data-ez-holder="product_listmain">탭콘텐츠4</div>
               </div>
             </div>
             <!-- //content-list -->
@@ -233,7 +225,7 @@
     <link rel="stylesheet" href="/ouii/layout/basic/css/add_layout.css" />
 
     <link rel="stylesheet" href="/myfolder/mystyle.css" />
-    <link rel="stylesheet" href="/ouii/tab.css">
+    <link rel="stylesheet" href="/ouii/tab.css" />
 
     <!-- ---------------------------------- -->
     <!--@css(/layout/basic/css/sub_style.css)-->
@@ -242,5 +234,32 @@
     <!--@css(/layout/basic/css/add_theme02.css)-->
     <!--@css(/layout/basic/css/add_theme03.css)-->
     <!--@css(/layout/basic/css/add_layout.css)-->
+
+    <script>
+      // <!-- 탭메뉴 테스트를 위한 스크립트 복사 / 카페24에는 업로드 안함 -->
+      jQuery(document).ready(function () {
+        /* 메인 탭카테고리 */
+        jQuery(".main_product_tab li").bind("click", function () {
+          jQuery(this).parent().find("li button").removeClass("active");
+          jQuery(this)
+            .parents(".main_product_category")
+            .find(".content_list .tabcontent")
+            .removeClass("active");
+          jQuery("button", this).addClass("active");
+          var activeTab = jQuery("button", this).attr("data-id");
+          jQuery(this)
+            .parents(".main_product_category")
+            .find(".content_list .tabcontent" + "#" + activeTab)
+            .addClass("active");
+        });
+        jQuery(
+          ".main_product_category .main_product_inner .main_product_tab li button, .content_list .tabcontent"
+        ).removeClass("active"); // 나머지 탭 숨김
+        jQuery(
+          ".main_product_category .main_product_inner .main_product_tab li:first-child button, .content_list .tabcontent:first-child"
+        ).addClass("active"); // 첫번째 탭 오픈
+      });
+      // 나는 제이커리로 동작을 하는데 문서가 다 읽혀서 동작을 한다면 ()와 {}사이에 동작해라 라는 뜻임!/
+    </script>
   </body>
 </html>
