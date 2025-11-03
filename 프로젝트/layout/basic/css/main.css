@@ -259,11 +259,11 @@
 /* 메인 상단 테마 변경 */
 
 /* 테마01 : 상단 메뉴 */
-#header {background-color: #f4f4f4 !important;}
+#header {background-color: transparent !important;}
 #header .inner .top_nav_box .top_category .sub-category li:hover > a {background-color:#f4f4f4;}
 
 /* 테마02 : 상단 메뉴 */
-.theme02 #header {background-color: #f6e5dd !important;}
+.theme02 #header {background-color: #D4EAD3 !important;}
 
 /* 테마03 : 상단 메뉴 */
-.theme03 #header {background-color: #dbe3f6 !important;}
+.theme03 #header {background-color: #D4EAD3 !important;}
