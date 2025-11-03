@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>아코디언ui</title>
+  <style>
+    :root{
+      --bg:#f7f8fa;
+      --card:#fff;
+      --accent:#2563eb;
+      --text:#111827;
+    }
+    body{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--text);
+      padding:32px;
+      display:flex;
+      justify-content:center;
+    }
+    .container{
+      width:100%;
+      max-width:720px;
+    }
+    .accordion{
+      background:var(--card);
+      border-radius:8px;
+      box-shadow:0 6px 18px rgba(15,23,42,0.06);
+      overflow:hidden;
+      border:1px solid rgba(15,23,42,0.06);
+    }
+    .item + .item{
+      border-top:1px solid rgba(15,23,42,0.06);
+    }
+    .trigger{
+      width:100%;
+      text-align:left;
+      padding:16px 20px;
+      background:transparent;
+      border:0;
+      font-size:16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      cursor:pointer;
+    }
+    .trigger:focus{
+      outline:3px solid rgba(37,99,235,0.12);
+      outline-offset:-3px;
+    }
+    .title{
+      font-weight:600;
+    }
+    .chev{
+      transition: transform 230ms ease;
+      width:20px; height:20px; display:inline-block;
+    }
+    .chev svg{ width:100%; height:100%; display:block; }
+    .item[aria-expanded="true"] .chev{
+      transform:rotate(180deg);
+    }
+    .panel{
+      overflow:hidden;
+      max-height:0;
+      transition:max-height 320ms ease, padding 220ms ease;
+      padding:0 20px;
+      background:linear-gradient(180deg, rgba(0,0,0,0.02), transparent);
+    }
+    .panel-inner{
+      padding:12px 0 20px 0;
+      color:#374151;
+      line-height:1.6;
+    }
+    /* when open, set padding */
+    .item[aria-expanded="true"] .panel{
+      padding:12px 20px 20px 20px;
+    }
+    /* small helper */
+    .muted{ font-size:14px; color:#6b7280; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="muted">아코디언 UI 예제</h1>
+
+    <div class="accordion" id="accordionExample">
+      <div class="item" id="item1" aria-expanded="false">
+        <button class="trigger" aria-controls="panel1" id="trigger1">
+          <span class="title">섹션 1 — 기본 정보</span>
+          <span class="chev" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div id="panel1" class="panel" role="region" aria-labelledby="trigger1" hidden>
+          <div class="panel-inner">
+            <p>여기에 섹션 1의 내용이 들어갑니다. 필요한 설명이나 링크 등을 배치하세요.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" id="item2" aria-expanded="false">
+        <button class="trigger" aria-controls="panel2" id="trigger2">
+          <span class="title">섹션 2 — 상세 설정</span>
+          <span class="chev" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div id="panel2" class="panel" role="region" aria-labelledby="trigger2" hidden>
+          <div class="panel-inner">
+            <p>섹션 2의 상세 내용입니다. 폼, 토글 등 다양한 요소를 넣을 수 있습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" id="item3" aria-expanded="false">
+        <button class="trigger" aria-controls="panel3" id="trigger3">
+          <span class="title">섹션 3 — 추가 정보</span>
+          <span class="chev" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div id="panel3" class="panel" role="region" aria-labelledby="trigger3" hidden>
+          <div class="panel-inner">
+            <p>섹션 3의 추가 정보입니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const accordion = document.getElementById('accordionExample');
+      const items = Array.from(accordion.querySelectorAll('.item'));
+      const triggers = items.map(i => i.querySelector('.trigger'));
+
+      function openItem(item){
+        // close others (single-open behavior)
+        items.forEach(it => {
+          if(it !== item) closeItem(it);
+        });
+        const panel = item.querySelector('.panel');
+        const inner = panel.querySelector('.panel-inner');
+        panel.hidden = false;
+        // allow JS to measure scrollHeight
+        requestAnimationFrame(() => {
+          panel.style.maxHeight = inner.scrollHeight + 40 + 'px';
+          item.setAttribute('aria-expanded','true');
+          panel.removeAttribute('aria-hidden');
+        });
+      }
+
+      function closeItem(item){
+        const panel = item.querySelector('.panel');
+        if(panel.hidden) return;
+        panel.style.maxHeight = '0px';
+        item.setAttribute('aria-expanded','false');
+        panel.setAttribute('aria-hidden','true');
+        // when transition ends set hidden to true to remove from accessibility tree if needed
+        panel.addEventListener('transitionend', function onEnd(){
+          if(item.getAttribute('aria-expanded') === 'false'){
+            panel.hidden = true;
+          }
+          panel.removeEventListener('transitionend', onEnd);
+        });
+      }
+
+      function toggleItem(item){
+        if(item.getAttribute('aria-expanded') === 'true') closeItem(item);
+        else openItem(item);
+      }
+
+      triggers.forEach((btn, idx) => {
+        const item = items[idx];
+        const panelId = btn.getAttribute('aria-controls');
+        const panel = document.getElementById(panelId);
+
+        // initialize aria-hidden based on markup
+        panel.setAttribute('aria-hidden', item.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+
+        btn.addEventListener('click', () => toggleItem(item));
+
+        btn.addEventListener('keydown', (e) => {
+          const key = e.key;
+          let newIndex;
+          if(key === 'ArrowDown'){
+            e.preventDefault();
+            newIndex = (idx + 1) % triggers.length;
+            triggers[newIndex].focus();
+          } else if(key === 'ArrowUp'){
+            e.preventDefault();
+            newIndex = (idx - 1 + triggers.length) % triggers.length;
+            triggers[newIndex].focus();
+          } else if(key === 'Home'){
+            e.preventDefault();
+            triggers[0].focus();
+          } else if(key === 'End'){
+            e.preventDefault();
+            triggers[triggers.length - 1].focus();
+          } else if(key === 'Enter' || key === ' '){
+            e.preventDefault();
+            toggleItem(item);
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
