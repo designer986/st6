@@ -195,6 +195,7 @@ a:hover {text-decoration:none;}
 }
 
 @media all and (min-width:1024px) {
+	.main #header { position: fixed; border: none;}
 	/* 하단 정보 */
 	#footer .tablet_fold {display:block !important;}
 	#footer .bt_company .tablet_fold {display:flex !important;}
