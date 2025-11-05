@@ -815,8 +815,8 @@ main_title과 main_product_tab이 나란히 배치*/
 }
 
   .xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li.ec-product-selected{
-    border: 2px solid #353736;
-    background-color: #c2e2c2;
+      border: 1px solid #68a87f;
+    background-color: #fff;
 
   }
 

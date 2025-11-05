@@ -134,8 +134,8 @@ a:hover {text-decoration:none;}
 
 /* 하단 */
 .footer_margin {margin-top:100px;}
-#footer {width:100%;margin:0 auto;padding:0;background:#fff;overflow:hidden; border-top: 1px solid #e5e5e5;}
-#footer .inner {max-width:1680px;width:92%;margin:0 auto;padding:80px 0 88px;color:#1a1a1a;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;flex-direction:row;}
+#footer {width:100%;margin:0 auto;padding:0;background:#1A3C34;overflow:hidden; }
+#footer .inner {max-width:1680px;width:92%;margin:0 auto;padding:80px 0 88px;color:#fff;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;flex-direction:row;}
 #footer .inner > div {flex-basis:100%;}
 
 /* 하단 로고 */
@@ -146,13 +146,13 @@ a:hover {text-decoration:none;}
 /* 하단 정보 */
 .bt_top {position:relative;display:flex;justify-content:space-between;}
 .bt_top > ul {display:flex;}
-.bt_top > ul > li {margin-left:90px; font-size: 14px; font-weight:600; letter-spacing: 0.05em;color: #333; line-height: 1.7;}
+.bt_top > ul > li {margin-left:90px; font-size: 14px; font-weight:600; letter-spacing: 0.05em;color: #fff; line-height: 1.7;}
 .bt_top > ul > li > ul {margin-top:10px;display:block;}
 .bt_top > ul > li > ul li,
-.bt_top > ul > li > ul li a {font-size:12px;letter-spacing:0.025em;color:#a4a4a4;font-weight:300;}
-.bt_top ul li.bt_company {margin:0;font-size: 14px; font-weight:600; letter-spacing: 0.05em;color: #333; line-height: 1.7;position:relative;}
+.bt_top > ul > li > ul li a {font-size:12px;letter-spacing:0.025em;color:#fff;font-weight:300;}
+.bt_top ul li.bt_company {margin:0;font-size: 14px; font-weight:600; letter-spacing: 0.05em;color: #fff; line-height: 1.7;position:relative;}
 .bt_top ul li.bt_company .bt_info_list {display:flex;flex-wrap:wrap;justify-content:flex-start;max-width:500px;margin-top:10px;}
-.bt_top ul li.bt_company .bt_info_list > li {margin:0 10px 0 0;font-size:12px;letter-spacing:0.025em;color:#a4a4a4;font-weight:300;}
+.bt_top ul li.bt_company .bt_info_list > li {margin:0 10px 0 0;font-size:12px;letter-spacing:0.025em;color:#fff;font-weight:300;}
 .bt_top ul li.bt_company .bt_info_list > li span:first-child {font-weight:600;}
 .bt_top li.bt_tel {font-size:12px;font-weight:400;}
 .bt_top li.bt_tel > strong {font-weight:600;}
@@ -163,21 +163,21 @@ a:hover {text-decoration:none;}
 .bt_top li.bt_bank .bt_title_sub > strong {font-weight:600;}
 .bt_top .pdr10 {padding-right:10px;}
 .bt_top li.bt_sns > div {margin-top:10px;}
-.bt_top li.bt_sns > div a {display:block;font-size:12px;letter-spacing:0.025em;color:#a4a4a4;font-weight:300;}
+.bt_top li.bt_sns > div a {display:block;font-size:12px;letter-spacing:0.025em;color:#fff;font-weight:300;}
 #footer .inner .bt_info,
-#footer .inner .bt_info a {font-size:12px;font-weight:300;color:#a4a4a4;line-height:2;}
+#footer .inner .bt_info a {font-size:12px;font-weight:300;color:#fff;line-height:2;}
 
 /* 하단 메뉴 */
 #footer .inner .bt_bottom {flex-basis: 100%; display: flex; justify-content: space-between; align-items: center; margin-top:30px;}
 #footer .inner .bt_util {margin-top:30px;}
 #footer .inner .bt_util {display:flex;justify-content:flex-start;flex-wrap:wrap;}
 #footer .inner .bt_util li {margin:0 13px 10px 0;padding:0 13px 0 0;}
-#footer .inner .bt_util li a {display:block;font-size:12px;font-weight:300;color:#a4a4a4;line-height:1;white-space:nowrap;}
-#footer .inner .bt_util li a strong {font-weight:300;color:#333;}
+#footer .inner .bt_util li a {display:block;font-size:12px;font-weight:300;color:#fff;line-height:1;white-space:nowrap;}
+#footer .inner .bt_util li a strong {font-weight:300;color:#fff;}
 
 /* 하단 에스크로 */
 #footer .inner .bt_escrow a {font-size:0;display:flex;align-items:center;justify-content: flex-end;}
-#footer .inner .bt_escrow a span {font-size:12px;font-weight:300;color:#a8a8a8;line-height:1.6;width:350px;word-break:keep-all;}
+#footer .inner .bt_escrow a span {font-size:12px;font-weight:300;color:#fff;line-height:1.6;width:350px;word-break:keep-all;}
 #footer .inner .bt_escrow a img {margin-right:10px;display:none;}
 #footer .inner .bt_escrow a img.on {display:block;}
 

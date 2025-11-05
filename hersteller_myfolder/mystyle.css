@@ -1,0 +1,20 @@
+/*****
+mystyle
+*/
+
+
+/* 허스텔러 메인  */
+.main_top_banner {
+    position: relative;
+    z-index: 997;
+    background-color: #1A3C34;
+    overflow: hidden;
+    width: 100%;
+    display: none;
+    padding: 20px 0;
+}
+
+
+@media(min-width: 75em) {
+.main_video .main_video_box:{
+        justify-content: flex-end;}}
